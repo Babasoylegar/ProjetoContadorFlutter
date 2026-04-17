@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/';
 
 void main() {
   runApp(MyApp());
@@ -28,7 +28,14 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+        body: Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/images/pikachu.png'),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
@@ -38,12 +45,15 @@ class HomePage extends StatelessWidget {
                 color: Color.fromARGB(255, 4, 87, 154),
                 fontWeight: FontWeight.w700),
           ),
-          Text(
-            "0",
-            style: TextStyle(
-                fontSize: 26,
-                color: Color.fromARGB(255, 4, 87, 154),
-                fontWeight: FontWeight.w700),
+          Padding(
+            padding: EdgeInsets.all(50),
+            child: Text(
+              "0",
+              style: TextStyle(
+                  fontSize: 26,
+                  color: Color.fromARGB(255, 4, 87, 154),
+                  fontWeight: FontWeight.w700),
+            ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -89,7 +99,7 @@ class HomePage extends StatelessWidget {
           )
         ],
       ),
-    );
+    ));
   }
 }
 
